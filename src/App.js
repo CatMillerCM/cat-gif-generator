@@ -1,28 +1,25 @@
 import './App.css';
 import getCatGifJson from './api';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
-  const [catGifUrl, setCatGifUrl] = useState(null);
+  const [catGifUrl, setCatGifUrl] = useState("https://cataas.com/cat/gif");
 
   const handleClick = async () => {
     const gifData = await getCatGifJson();
-    const gifUrl = gifData.data.url;
-    setCatGifUrl(gifUrl);
-    console.log(gifUrl, "<<")
+    const gifPath = gifData.data.url;
+    setCatGifUrl(`https://cataas.com/${gifPath}`);
   };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Cat Gif Generator</p>
+      <header className="title">
+        <h1>Cat Gif Generator</h1>
       </header>
-      <button className="button" onClick={handleClick}>Generate Cat Gif!</button>
-      {catGifUrl && (
-        <div className="cat-gif">
-          <img src={`https://cataas.com/${catGifUrl}`}></img>
-        </div>
-      )}
+      <button className="button" onClick={handleClick}>Show Me A New Cat Gif!</button>
+      <div className="gif-container">
+        <img className="cat-gif" src={catGifUrl}></img>
+      </div>
     </div>
   );
 }

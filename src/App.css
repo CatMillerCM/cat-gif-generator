@@ -1,3 +1,40 @@
 .App {
+  padding: 4rem;
+  margin: auto;
+  width: 30%;
   text-align: center;
+  border: 4px solid orange;
+  border-radius: 8px;
+  background-color: #faeacc;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  color: orange;
+  text-decoration: underline;
+  margin-bottom: 3rem;
+}
+
+.button {
+  background-color: orange;
+  color: white;
+  border: 2px solid orange;
+  border-radius: 8px;
+  padding: 1rem;
+  font-weight: bolder;
+  font-size: 16px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.gif-container {
+  width: 400px;
+  margin: auto;
+}
+
+.cat-gif {
+  width: 100%;
+  height: 300px;
+  border: 6px solid white;
+  border-radius: 8px;
 }
