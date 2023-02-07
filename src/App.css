@@ -27,13 +27,9 @@
   cursor: pointer;
 }
 
-.gif-container {
-  width: 400px;
-  margin: auto;
-}
-
 .cat-gif {
-  width: 100%;
+  margin: auto;
+  width: 400px;
   height: 300px;
   border: 6px solid white;
   border-radius: 8px;

@@ -6,8 +6,8 @@ function App() {
   const [catGifUrl, setCatGifUrl] = useState("https://cataas.com/cat/gif");
 
   const handleClick = async () => {
-    const gifData = await getCatGifJson();
-    const gifPath = gifData.data.url;
+    const gifJson = await getCatGifJson();
+    const gifPath = gifJson.data.url;
     setCatGifUrl(`https://cataas.com/${gifPath}`);
   };
 
@@ -17,9 +17,7 @@ function App() {
         <h1>Cat Gif Generator</h1>
       </header>
       <button className="button" onClick={handleClick}>Show Me A New Cat Gif!</button>
-      <div className="gif-container">
-        <img className="cat-gif" src={catGifUrl}></img>
-      </div>
+      <img className="cat-gif" src={catGifUrl}></img>
     </div>
   );
 }
