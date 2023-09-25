@@ -1,6 +1,6 @@
-import './App.css';
 import getCatGifJson from './api';
 import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [catGifUrl, setCatGifUrl] = useState("https://cataas.com/cat/gif");

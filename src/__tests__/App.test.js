@@ -1,6 +1,7 @@
+import '@testing-library/jest-dom';
+import App from '../App';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from './App';
 
 describe('when I load the cat gif generator', () => {
   let initialCatGifUrl = null;
@@ -35,7 +36,8 @@ describe('when I load the cat gif generator', () => {
 
       userEvent.click(button);
 
-      await act(async () => await new Promise((r) => setTimeout(r, 2000)))
+      // this is to account for the loading time of the gif when the data has been received
+      await act(async () => await new Promise((r) => setTimeout(r, 2000)));
     });
 
     it('should render a different cat gif from the api', () => {
